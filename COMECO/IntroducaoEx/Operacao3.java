@@ -1,6 +1,6 @@
-package Introducao;
+package COMECO.IntroducaoEx;
 
-public class Operacao {
+public class Operacao3 {
     public static void main(String[] args) {
         int nota1=8;
         int nota2=5;

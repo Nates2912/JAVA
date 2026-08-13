@@ -1,4 +1,4 @@
-package Introducao;
+package COMECO.IntroducaoEx;
 
 import java.util.Scanner;
 

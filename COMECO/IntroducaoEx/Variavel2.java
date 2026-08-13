@@ -1,6 +1,6 @@
-package Introducao;
+package COMECO.IntroducaoEx;
 
-public class Variavel {
+public class Variavel2 {
 
     public static void main(String[] args) {
         
