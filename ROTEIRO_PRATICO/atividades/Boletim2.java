@@ -1,17 +1,24 @@
 package ROTEIRO_PRATICO.atividades;
 
+import java.util.Scanner;
+
 public class Boletim2 {
     public static void main(String[] args) {
 
-        String nome = "Zhadie";
-        double nota1 = 8.5;
-        double nota2 = 5;
+        try (Scanner sc = new Scanner(System.in)){
+
+        System.out.print("Nome: ");
+        String nome=sc.nextLine();
+        System.out.print("1ª nota: ");
+        double nota1=sc.nextDouble();
+        System.out.print("2ª nota: ");
+        double nota2=sc.nextDouble();
 
         double media=(nota1 + nota2)/2;
 
         System.out.printf("Aluno: %s%n1ª Nota: %.2f%n2ª Nota: %.2f%nMédia: %.2f%n",
             nome, nota1, nota2, media
-        );
-
+            );
+        }
     }
 }
