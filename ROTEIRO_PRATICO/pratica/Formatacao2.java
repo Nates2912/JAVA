@@ -1,6 +1,6 @@
-package COMECO.IntroducaoEx;
+package ROTEIRO_PRATICO.pratica;
 
-public class Formatacao6 {
+public class Formatacao2 {
     public static void main(String[] args) {
         String produto = "Teclado";
         int quantidade = 2;

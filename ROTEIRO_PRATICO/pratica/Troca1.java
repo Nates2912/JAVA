@@ -1,6 +1,6 @@
-package COMECO.IntroducaoEx;
+package ROTEIRO_PRATICO.pratica;
 
-public class Troca5 {
+public class Troca1 {
     public static void main(String[] args) {
 
         String nome = "Millie";

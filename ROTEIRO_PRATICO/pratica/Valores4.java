@@ -1,6 +1,6 @@
-package COMECO.IntroducaoEx;
+package ROTEIRO_PRATICO.pratica;
 
-public class Valores8 {
+public class Valores4 {
     public static void main(String[] args) {
         String nome = "Marcos";
         int idade = 30;

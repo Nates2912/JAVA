@@ -1,6 +1,6 @@
-package COMECO.IntroducaoEx;
+package ROTEIRO_PRATICO.pratica;
 
-public class Numeros7 {
+public class Numeros3 {
     
     public static void main(String[] args) {
         
