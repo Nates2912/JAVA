@@ -1,8 +1,8 @@
-package COMECO.IntroducaoQuiz;
+package COMECO.IntroducaoAtv;
 
 import java.util.Scanner;
 
-public class atv5 {
+public class Atv5 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

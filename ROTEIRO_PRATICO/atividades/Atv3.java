@@ -2,7 +2,7 @@ package ROTEIRO_PRATICO.atividades;
 
 import java.util.Scanner;
 
-public class NotaFiscal3 {
+public class Atv3 {
     public static void main(String[] args) {
 
         try (Scanner sc = new Scanner(System.in)) {

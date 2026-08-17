@@ -1,7 +1,7 @@
 package CONDICIONAIS.CondicionaisEx;
 import java.util.Scanner;
 
-public class Condicionais2 {
+public class And2 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
