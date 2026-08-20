@@ -1,4 +1,4 @@
-package WHILE.DoWhileEx;
+package WhileDowhile.DOWHILE.DoWhileEx;
 
 public class DoWh1 {
     public static void main(String[] args) {
@@ -8,6 +8,6 @@ public class DoWh1 {
             numero++;
         }while(numero<=5);
         System.out.println("End.");
-        
+
     }
 }

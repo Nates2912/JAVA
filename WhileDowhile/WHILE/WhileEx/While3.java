@@ -1,4 +1,4 @@
-package WHILE.WhileEx;
+package WhileDowhile.WHILE.WhileEx;
 
 import java.util.Scanner;
 

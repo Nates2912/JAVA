@@ -1,12 +1,13 @@
-package WHILE.WhileEx;
+package WhileDowhile.DOWHILE.DoWhileEx;
 
-public class While2 {
+public class DoWh2 {
     public static void main(String[] args) {
         int numero = 5;
-        while (numero>=1) {
+        do{
             System.out.println(numero);
             numero--;
-        }
-        System.out.println("End!");
+        }while(numero>=1);
+        System.out.println("End.");
+
     }
 }

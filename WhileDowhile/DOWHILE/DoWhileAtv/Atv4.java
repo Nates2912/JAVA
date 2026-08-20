@@ -1,33 +1,33 @@
-package WHILE.DoWhileEx;
+package WhileDowhile.DOWHILE.DoWhileAtv;
 
 import java.util.Scanner;
 
-public class DoWh5 {
+public class Atv4 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         int op;
 
-        do{System.out.println("\n====MENU====");
-            System.out.println("1-NOVO JOGO");
-            System.out.println("2-CONTINUAR JOGO");
-            System.out.println("3-CONFIGURAÇÕES");
+        do{System.out.println("\n====MENU - ESCOLHA SUA MOCHILA.===");
+            System.out.println("1-MOCHILA ESCOLAR.");
+            System.out.println("2-MOCHILA DE VIAGEM.");
+            System.out.println("3-MOCHILA ESPORTIVA.");
             System.out.println("0-SAIR");
             System.out.print("ESCOLHA A OPÇÃO: ");
             op = sc.nextInt();
 
             switch (op) {
                 case 1:
-                    System.out.println("COMEÇAR! ");
+                    System.out.println("Mochila Escolar: Compacta e ideal para estudantes.");
                     break;
                 case 2:
-                    System.out.println("CONTINUAR! ");
+                    System.out.println("Mochila de Viagem: Espaçosa, ideal para longas jornadas.");
                     break;
                 case 3:
-                    System.out.println("CONFIGURAÇÕES! ");
+                    System.out.println("Mochila Esportiva: Leve, resistente e ergonômica.");
                     break;
                 case 0:
-                    System.out.println("SAIR! ");
+                    System.out.println("Sair. ");
                     break;
 
                 default:
@@ -40,5 +40,3 @@ public class DoWh5 {
             
     }
 }
-    
-

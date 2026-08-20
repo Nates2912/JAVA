@@ -1,4 +1,4 @@
-package WHILE.WhileEx;
+package WhileDowhile.WHILE.WhileEx;
 
 public class While1 {
     public static void main(String[] args) {
