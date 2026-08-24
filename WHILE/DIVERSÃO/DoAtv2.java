@@ -1,15 +1,14 @@
-package WhileDowhile.WHILE.WhileAtv;
+package WHILE.DIVERSÃO;
 
 import java.util.Scanner;
 
-public class Atv1 {
+public class DoAtv2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int op =0;
+        int op;
 
-        while(op!=5) {
-            System.out.println("\n====MENU - ESCOLHA SUA EMBALAGEM.===");
+        do{System.out.println("\n====MENU - ESCOLHA SUA EMBALAGEM.===");
             System.out.println("1-CAIXA DE PAPELÃO.");
             System.out.println("2-SACOLA PLÁSTICA.");
             System.out.println("3-EMBALAGEM DE VIDRO.");
@@ -34,9 +33,12 @@ public class Atv1 {
                 default:
                     System.out.print("Opção inválida");
                     break;
-            }
-        }
-
-        sc.close();
+                }
+    }while(op!=0);
+            
+    sc.close();
+            
     }
 }
+    
+

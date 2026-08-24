@@ -1,8 +1,8 @@
-package WhileDowhile.WHILE.WhileAtv;
+package WHILE.DIVERSÃO;
 
 import java.util.Scanner;
 
-public class Atv2 {
+public class WhAtv2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

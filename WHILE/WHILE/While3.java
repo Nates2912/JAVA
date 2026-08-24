@@ -1,22 +1,21 @@
-package WhHILE.DOWHILE.DoWhileEx;
+package WHILE.WHILE;
 
 import java.util.Scanner;
 
-public class DoWh3 {
+public class While3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Informe o número:");
+        System.out.println("Informe o número");
         int limite = sc.nextInt();
 
-        int numero = 1;
-        do{
+        int numero=1;
+        while(numero<=limite) {
             System.out.println(numero);
             numero++;
-        }while(numero<=limite);
-        System.out.println("End.");
+        }
 
         sc.close();
-
     }
+    
 }

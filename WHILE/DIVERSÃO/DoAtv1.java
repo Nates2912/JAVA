@@ -1,19 +1,21 @@
-package WhileDowhile.WHILE.WhileEx;
+package WHILE.DIVERSÃO;
 
 import java.util.Scanner;
 
-public class While4 {
+public class DoAtv1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String senha = "";
 
-        while(!senha.equals("1234")){
-            System.out.print("Informe a senha: ");
+        do{System.out.print("Informe a senha: ");
             senha = sc.nextLine();
-        }
-        System.out.print("Acesso permitido.");
 
+        }while(!senha.equals("2024"));
+        
+        System.out.print("Acesso permitido.");
+            
 
         sc.close();
+
     }
 }

@@ -1,4 +1,4 @@
-package WHILE.DOWHILE.DoWhileAtv;
+package WHILE.WHILE;
 
 public class DoWh1 {
     public static void main(String[] args) {
