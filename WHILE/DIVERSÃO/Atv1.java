@@ -1,4 +1,4 @@
-package WhileDowhile.DIVERSÃO;
+package WHILE.DIVERSÃO;
 
 public class Atv1 {
     public static void main(String[] args) {

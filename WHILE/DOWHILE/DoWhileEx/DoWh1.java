@@ -1,4 +1,4 @@
-package WhileDowhile.DOWHILE.DoWhileEx;
+package WHILE.DOWHILE.DoWhileAtv;
 
 public class DoWh1 {
     public static void main(String[] args) {

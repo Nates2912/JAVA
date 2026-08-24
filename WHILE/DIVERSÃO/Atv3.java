@@ -1,4 +1,4 @@
-package WhileDowhile.DIVERSÃO;
+package WHILE.DIVERSÃO;
 
 import java.util.Scanner;
 
