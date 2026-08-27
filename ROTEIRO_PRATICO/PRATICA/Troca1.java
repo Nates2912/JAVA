@@ -1,4 +1,4 @@
-package ROTEIRO_PRATICO.PraticaEx;
+package ROTEIRO_PRATICO.PRATICA;
 
 public class Troca1 {
     public static void main(String[] args) {
