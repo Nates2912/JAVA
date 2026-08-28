@@ -1,4 +1,4 @@
-package ROTEIRO_PRATICO.RoteiroAtv;
+package ROTEIRO_PRATICO.DIVERSÃO;
 
 import java.util.Scanner;
 

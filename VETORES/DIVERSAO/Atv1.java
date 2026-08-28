@@ -1,4 +1,3 @@
-package VETORES.DIVERSAO;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package CONDICIONAIS.CondicionaisEx;
+package CONDICIONAIS.CONDICIONAIS;
 import java.util.Scanner;
 
 public class Or3 {

@@ -1,4 +1,4 @@
-package CONDICIONAIS.CondicionaisAtv;
+package CONDICIONAIS.DIVERSÃO;
 
 import java.util.Scanner;
 
