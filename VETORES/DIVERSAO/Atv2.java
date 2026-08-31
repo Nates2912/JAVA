@@ -7,7 +7,7 @@ public class Atv2 {
 
         final int limite = 5;
 
-        String[] quartos = new String[limite];
+        String[] nquartos = new String[limite];
         int[] quantidadeCamas = new int[limite];
         
         int qtd = 0;
@@ -22,9 +22,36 @@ public class Atv2 {
 
             switch (op) {
                 case 1:
-                    System.out.print("NOME DO QUARTO: ");
-                    String nome = sc.next();
-                    break;
+                    if (qtd==limite){
+                System.out.println("LISTA CHEIA!");
+                break;
+            }
+            System.out.print("REGISTRO DE QUARTO: ");
+            String quartos = sc.next();
+
+            nquartos [qtd] = quartos;
+            qtd++;
+
+            System.out.println("PRODUTO CADASTRADO COM SUCESSO!");
+            break;
+
+                case 2:
+                if (qtd==limite){
+                System.out.println("LISTA CHEIA!");
+                break;
+            }
+
+            System.out.print("QUANTIDADE: ");
+            int quantidades = sc.nextInt();
+            sc.nextLine();
+
+            quantidadeCamas [qtd] = quantidades;
+            qtd++;
+
+            System.out.println("PRODUTO CADASTRADO COM SUCESSO!");
+            break;
+
+
                 default:
                     throw new AssertionError();
             }
