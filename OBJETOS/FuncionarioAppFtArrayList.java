@@ -1,23 +1,18 @@
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Scanner; // Importação necessária para usar o ArrayList
 
-public class FuncionarioApp {
+public class FuncionarioAppFtArrayList {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
-        // 1. Definimos o tamanho máximo dos vetores
-        int TAMANHO_MAX = 100;
-        
-        // 2. Criamos os vetores com os nomes exatos das suas classes
-        FuncionarioProfessor[] professores = new FuncionarioProfessor[TAMANHO_MAX];
-        FuncionarioTecnico[] tecnicos = new FuncionarioTecnico[TAMANHO_MAX];
-        
-        // 3. Variáveis contadoras
-        int qtdProfessores = 0;
-        int qtdTecnicos = 0;
+        // 1. Criando as listas dinâmicas. 
+        // Note que não precisamos definir um limite de 100 ou gerenciar posições.
+        ArrayList<FuncionarioProfessor> professores = new ArrayList<>();
+        ArrayList<FuncionarioTecnico> tecnicos = new ArrayList<>();
         
         int op;
 
-        do {
+        do { 
             System.out.println("\n===== SISTEMA DE FUNCIONÁRIOS =====");
             System.out.println("1 - Cadastrar Professor");
             System.out.println("2 - Cadastrar Técnico");
@@ -31,15 +26,10 @@ public class FuncionarioApp {
                 sc.next();
             }
             op = sc.nextInt();
-            sc.nextLine(); // Limpa o buffer
+            sc.nextLine(); // Limpa o buffer do teclado
 
             switch (op) {
                 case 1:
-                    if (qtdProfessores >= TAMANHO_MAX) {
-                        System.out.println("Limite de professores atingido!");
-                        break;
-                    }
-                    
                     System.out.println("\n==== CADASTRAR PROFESSOR ====");
                     System.out.print("Nome: ");
                     String nomeProf = sc.nextLine();
@@ -51,18 +41,12 @@ public class FuncionarioApp {
                     System.out.print("Disciplina: ");
                     String disciplina = sc.nextLine();
                     
-                    professores[qtdProfessores] = new FuncionarioProfessor(nomeProf, salarioProf, disciplina);
-                    qtdProfessores++; 
-                    
+                    // O método .add() apenas empurra o novo objeto para o final da lista!
+                    professores.add(new FuncionarioProfessor(nomeProf, salarioProf, disciplina));
                     System.out.println("Professor cadastrado com sucesso!");
                     break;
                     
                 case 2:
-                    if (qtdTecnicos >= TAMANHO_MAX) {
-                        System.out.println("Limite de técnicos atingido!");
-                        break;
-                    }
-                    
                     System.out.println("\n==== CADASTRAR TÉCNICO ====");
                     System.out.print("Nome: ");
                     String nomeTec = sc.nextLine();
@@ -74,20 +58,20 @@ public class FuncionarioApp {
                     System.out.print("Setor: ");
                     String setor = sc.nextLine();
                     
-                    tecnicos[qtdTecnicos] = new FuncionarioTecnico(nomeTec, salarioTec, setor);
-                    qtdTecnicos++;
-                    
+                    // O método .add() empurra o técnico para a lista de técnicos
+                    tecnicos.add(new FuncionarioTecnico(nomeTec, salarioTec, setor));
                     System.out.println("Técnico cadastrado com sucesso!");
                     break;
                     
                 case 3:
                     System.out.println("\n==== LISTA DE PROFESSORES ====");
-                    if (qtdProfessores == 0) {
+                    // O método .isEmpty() verifica se a lista está vazia
+                    if (professores.isEmpty()) {
                         System.out.println("Nenhum professor cadastrado.");
                     } else {
-                        for (int i = 0; i < qtdProfessores; i++) {
-                            // Alterado para chamar o SEU método: exibirDados()
-                            professores[i].exibirDados();
+                        // O laço "for-each": Para cada FuncionarioProfessor "p" na lista "professores"...
+                        for (FuncionarioProfessor p : professores) {
+                            p.exibirDados(); // Chamando o seu método!
                             System.out.println("-----------------------");
                         }
                     }
@@ -95,12 +79,12 @@ public class FuncionarioApp {
                     
                 case 4:
                     System.out.println("\n==== LISTA DE TÉCNICOS ====");
-                    if (qtdTecnicos == 0) {
+                    if (tecnicos.isEmpty()) {
                         System.out.println("Nenhum técnico cadastrado.");
                     } else {
-                        for (int i = 0; i < qtdTecnicos; i++) {
-                            // Alterado para chamar o SEU método: exibirDados()
-                            tecnicos[i].exibirDados();
+                        // Para cada FuncionarioTecnico "t" na lista "tecnicos"...
+                        for (FuncionarioTecnico t : tecnicos) {
+                            t.exibirDados(); // Chamando o seu método!
                             System.out.println("-----------------------");
                         }
                     }

@@ -4,6 +4,8 @@ public class VeiculoApp {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        VeiculoCarro carro = null;
+        VeiculoMoto moto = null;
         Veiculo v = new Veiculo(null, null);
 
         System.out.print("Informe a marca: ");
