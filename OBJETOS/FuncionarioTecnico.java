@@ -1,3 +1,4 @@
+
 public class FuncionarioTecnico extends Funcionario{
     private String setor;
 

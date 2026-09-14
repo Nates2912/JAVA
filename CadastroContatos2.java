@@ -1,15 +1,14 @@
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CadastroContatos {
+public class CadastroContatos2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         ArrayList<Contato> contatos = new ArrayList<>();
 
         while (true) {
-            System.out.println("Contatos\n1-Cadastrar contato\n2-Listar contato\n3-Excluir contato\n4-Alterar contato\n5-Pesquisar contato\n6-Sair\nOpção: ");
+            System.out.println("Contatos\n1-Cadastrar contato pessoal\n2-Cadastrar contato profissional\n3-Listar contato\n4-Excluir contato\n5-Alterar contato\n6-Pesquisar contato\n7-Sair\nOpção: ");
             int op = sc.nextInt();
             sc.nextLine();
 
@@ -19,19 +18,35 @@ public class CadastroContatos {
                     String nome = sc.nextLine();
                     System.out.println("Informe o telefone: ");
                     String numero = sc.nextLine();
+                    System.out.println("Informe o parentesco: ");
+                    String parentesco = sc.nextLine();
                     
-                    contatos.add(new Contato(nome, numero));
+                    contatos.add(new ContatoPessoal(nome, numero,parentesco));
                     System.out.println("Cadastro realizado!");
                 }
 
-                case 2 -> {
+                case 2 ->{
+                    System.out.println("Informe o nome: ");
+                    String nome = sc.nextLine();
+                    System.out.println("Informe o telefone: ");
+                    String numero = sc.nextLine();
+                    System.out.println("Informe a empresa: ");
+                    String empresa = sc.nextLine();
+                    System.out.println("Informe o cargo: ");
+                    String  cargo= sc.nextLine();
+                    
+                    contatos.add(new ContatoProfissional(nome, numero,empresa,cargo));
+                    System.out.println("Cadastro realizado!");
+                }
+
+                case 3 -> {
                     System.out.println("Nomes cadastrados: ");
                     for (int i = 0; i < contatos.size(); i++) {
                         System.out.println((i+1)+" - "+contatos.get(i));
                     }
                 }
 
-                case 3 -> {
+                case 4 -> {
                     System.out.println("Informe o índice para remover: ");
                     int index = sc.nextInt();
                     sc.nextLine();
@@ -44,7 +59,7 @@ public class CadastroContatos {
                     }
                 }
 
-                case 4 -> {
+                case 5 -> {
                     System.out.println("Informe o número para alterar: ");
                     int pos = sc.nextInt();
                     sc.nextLine();
@@ -63,7 +78,7 @@ public class CadastroContatos {
                     }
                 }
 
-                case 5 -> {
+                case 6 -> {
                     System.out.println("Informe o nome para pesquisar: ");
                     String busca = sc.nextLine();
                     
@@ -79,9 +94,9 @@ public class CadastroContatos {
                         }
                     }
                 }
-                case 6 -> sc.close();
+                case 7 -> {sc.close();}
 
-                default -> System.out.println("Saindo...");
+                default -> System.out.println("Inválido...");
             }
         }
     }

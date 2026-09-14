@@ -14,91 +14,81 @@ public class Atv1 {
     
     public static void main(String[] args) {
         
-        Scanner sc = new Scanner(System.in);
-    
-
-    //constraint
-    final int limite = 5;
-    
-    int[] maxnumeros = new int[limite];
-
-        
-        int ref = 0;
-        int op;
-
-    do{
-    System.out.println("\n====MENU====");
-    System.out.println("1-ADICIONAR NÚMERO\n2-LISTAR NÚMEROS\n3-REMOVER NÚMERO\n4-SAIR");
-    System.out.print("ESCOLHA A OPÇÃO: ");
-    op = sc.nextInt();
-    sc.nextLine();
-
-
-    switch (op) {
-        case 1:
+        //constraint
+        try (Scanner sc = new Scanner(System.in)) {
+            //constraint
+            final int limite = 5;
             
-            if (ref==limite){
-                System.out.println("INSERÇÃO FALHOU! NÃO SE CABE MAIS NÚMEROS!");
-                break;
-            }
+            int[] maxnumeros = new int[limite];
             
-            System.out.println("====INSERIR NÚMEROS====");
-            System.out.print("NÚMERO: ");
-            int numeros = sc.nextInt();
-            sc.nextLine();
-
-            maxnumeros [ref] = numeros;
-            ref++;
-
-            System.out.println("NÚMERO CADASTRADO!");
-            break;
-
-        case 2:
-            if (ref == 0){
-                System.out.println("NENHUM NÚMERO INSERIDO.");
-                break;
-            }
-            System.out.println("====LISTAR NÚMEROS====");
-            for (int i = 0; i < ref; i++) {
-                System.out.println(i+" NÚMEROS: "+maxnumeros[i]);
-            }
-            break;
-
-        case 3:
-            if (ref == 0) {
-                System.out.println("NENHUM NÚMERO CADASTRADO PARA REMOVER.");
-                break;
-            }
-
+            
+            int ref = 0;
+            int op;
+            
+            do{
+                System.out.println("\n====MENU====");
+                System.out.println("1-ADICIONAR NÚMERO\n2-LISTAR NÚMEROS\n3-REMOVER NÚMERO\n4-SAIR");
+                System.out.print("ESCOLHA A OPÇÃO: ");
+                op = sc.nextInt();
+                sc.nextLine();
+                
+                
+                switch (op) {
+                    case 1 -> {
+                        if (ref==limite){
+                            System.out.println("INSERÇÃO FALHOU! NÃO SE CABE MAIS NÚMEROS!");
+                            break;
+                        }
+                        
+                        System.out.println("====INSERIR NÚMEROS====");
+                        System.out.print("NÚMERO: ");
+                        int numeros = sc.nextInt();
+                        sc.nextLine();
+                        
+                        maxnumeros [ref] = numeros;
+                        ref++;
+                        
+                        System.out.println("NÚMERO CADASTRADO!");
+                    }
+                    
+                    case 2 -> {
+                        if (ref == 0){
+                            System.out.println("NENHUM NÚMERO INSERIDO.");
+                            break;
+                        }
+                        System.out.println("====LISTAR NÚMEROS====");
+                        for (int i = 0; i < ref; i++) {
+                            System.out.println(i+" NÚMEROS: "+maxnumeros[i]);
+                        }   }
+                    
+                    case 3 -> {
+                        if (ref == 0) {
+                            System.out.println("NENHUM NÚMERO CADASTRADO PARA REMOVER.");
+                            break;
+                        }
+                        
                         System.out.println("====REMOVER NÚMEROS====");
-            System.out.print("INFORME A ÍNDICE A REMOVER: ");
-            int posRem = sc.nextInt();
-            sc.nextLine();
-
-            if (posRem < 0 || posRem >= ref) {
-                System.out.println("ÍNDICE INVÁLIDO!");
-            } else {
-                for (int i = posRem; i < ref - 1; i++) {
-                    maxnumeros[i] = maxnumeros[i + 1];
+                        System.out.print("INFORME A ÍNDICE A REMOVER: ");
+                        int posRem = sc.nextInt();
+                        sc.nextLine();
+                        
+                        if (posRem < 0 || posRem >= ref) {
+                            System.out.println("ÍNDICE INVÁLIDO!");
+                        } else {
+                            for (int i = posRem; i < ref - 1; i++) {
+                                maxnumeros[i] = maxnumeros[i + 1];
+                            }
+                            ref--;
+                            System.out.println("REMOVIDO COM SUCESSO!");
+                        }   }
+                    case 4 -> System.out.println("SAIR!");
+                    
+                    default -> System.out.println("OPÇÃO INVÁLIDA!");
                 }
-                ref--;
-                System.out.println("REMOVIDO COM SUCESSO!");
-            }
-            break;
-        case 4:
-            System.out.println("SAIR!");
-            break;
-            
-        default:
-            System.out.println("OPÇÃO INVÁLIDA!");
-            break;
-    }
-
-    
-    }while(op!=0);
-
-
-        sc.close();
+                
+                
+            }while(op!=0);
+        }
     }
 }
 

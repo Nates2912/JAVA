@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.Scanner; // Importação necessária para usar o ArrayList
 

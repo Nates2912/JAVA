@@ -21,7 +21,14 @@ public class Contato {
         this.numero=numero;
     }
 
-public  String toString(){
+    @Override
+    public  String toString(){
     return nome+" - "+numero;
 }
+
+
+    public void exibirInfo() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'exibirInfo'");
+    }
 }
