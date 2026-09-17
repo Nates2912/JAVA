@@ -1,0 +1,25 @@
+public class Cliente extends Pessoa implements Pagamento{
+    
+    public Cliente(String nome){
+        super(nome);
+    }
+
+    //método da interface
+    @Override 
+    public void pagar(double  valor){
+        System.out.println("Pagamento realizado: R$ "+valor);
+    }
+
+    //Sobrecarga
+    public  void comprar(String produto){
+        System.out.println("Produto comprado: "+produto);
+    }
+
+    public void comprar(String produto, int quantidade){
+        System.out.println("Produto comprado: "+produto+"\nQuantidade: "+quantidade);
+    }
+
+    public void comprar(String produto, int quantidade, double valor){
+        System.out.println("Produto comprado: "+produto+"\nQuantidade: "+quantidade+"Valor Unitário: "+valor+"Total: R$ "+quantidade*valor);
+    }
+}

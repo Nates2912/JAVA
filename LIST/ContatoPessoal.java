@@ -1,3 +1,4 @@
+
 public class ContatoPessoal extends Contato{
 
     private String parentesco;
