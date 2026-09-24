@@ -1,0 +1,47 @@
+#FAZ cOM QUE VOCE POSSA USAR O MESMO METODO COM VARIAS COISAS
+
+(^ não ligue, é so uma anotação que eu não quero apagar)
+
+
+RESPOSTAS!!!
+
+Em qual classe foi utilizado encapsulamento?
+Em todas as classes do projeto
+
+
+Quais classes participaram da herança?
+Funcionario, FuncionarioCLT, FuncionarioFreelancer / Veiculo, VeiculoCarro, VeiculoMoto / Produto, ProdutoFisico, ProdutoDigital / Curso, CursoPresencial, CursoOnline / Pedido, PedidoLocal, PedidoDelivery
+
+
+Qual classe foi considerada a classe pai?
+Funcionario, Veiculo, Produto, Curso e Pedido
+
+
+Qual ou quais classes foram consideradas classes filhas?
+FuncionarioCLT, FuncionarioFreelancer, VeiculoCarro, VeiculoMoto, ProdutoFisico, ProdutoDigital, CursoPresencial, CursoOnline, PedidoLocal e PedidoDelivery.
+
+
+Qual interface foi criada?
+FuncionarioPagamento, VeiculoAluguel, ProdutoVenda , CursoMatricula e PedidoPagamento
+
+
+Qual classe utilizou implements?
+as classes que usaram interface, tipo: VeiculoCarro, VeiculoMoto, ProdutoFisico, ProdutoDigital, CursoPresencial, CursoOnline, PedidoLocal e PedidoDelivery
+
+
+Qual método possui sobrecarga?
+calcularPagamento, calcularAluguel, calcularVenda, realizarMatricula, pagar
+
+
+
+Qual é a diferença entre os métodos sobrecarregados?
+Os métodos sobrecarregados tem o mesmo nome e pertencem à mesma classe, mas são diferentes no número ou no tipo dos parâmetros que recebem 
+EXEMPLO: um método pagar(valor) aceita apenas o valor, enquanto pagar(valor, chavePix) aceita o valor e uma String adicional
+
+
+Onde foi utilizado extends?
+Em todas as classes filhas
+
+
+Explique com suas palavras a função de uma interface em Java.
+Uma interface funciona como um contrato obrigatório. Ela mostra quais métodos as classes devem ter, fazendo que diferentes tipos de objetos compartilhem as mesmas ações, mas deixando que cada classe implemente a lógica interna dessas ações do seu próprio jeito.
