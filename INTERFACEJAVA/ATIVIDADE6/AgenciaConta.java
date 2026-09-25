@@ -47,7 +47,7 @@ public class AgenciaConta {
         if (valor > 0) {
             this.saldo += valor;
             System.out.println("Depósito de R$ " + String.format("%.2f", valor) + " realizado com sucesso!");
-            System.out.println("Saldo atualizado: R$ " + String.format("%.2f", this.saldo));
+            System.out.println("Saldo atualizado: R$ " + String.format("%.2f",saldo));
         } else {
             System.out.println("Erro: O valor do depósito deve ser maior que zero.");
         }
