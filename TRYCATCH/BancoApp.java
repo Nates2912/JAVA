@@ -1,54 +1,88 @@
-import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class BancoApp {
     public static void main(String[] args) {
-        ArrayList<String> lista = new ArrayList<>();
-        try (Scanner sc = new Scanner(System.in)) {
-            int op =-1;
-            
-            while (op !=0){
-                System.out.println("====MENU====\n1-Adicionar\\n2-Listar\\n3-Remover\\n0-Remover");
-                System.out.print("Informe a opção");
-                op=sc.nextInt();
-                sc.nextLine();
+        Scanner sc = new Scanner(System.in);
+        BancoCadastro cadastro = new BancoCadastro();
 
-                    switch (op) {
-                        case 1 -> {
-                            System.out.println("Informe o nome: ");
-                            String nome = sc.nextLine();
-                            lista.add(nome);
-                            System.out.println("Adicionado com sucesso!");
-                        }
-                        case 2 ->{
-                            if (lista.isEmpty()) {
-                                System.out.println("A lista está vazia!");
-                            }else{
-                                System.out.println("Lista: "+lista);
-                            }return;
-                        }
-                        case 3 -> {
-                            System.out.println("Informe o índice para remover");
-                            int indice=sc.nextInt();
-                            sc.nextLine();
-                            lista.remove(indice);
-                            System.out.println("Removido com sucesso!");
-                        }
-                        case 0 -> {
-                            System.out.println("Saindo...");
-                        }
-                        default -> throw new AssertionError();
-                    }
-                
+        while (true) {
+            System.out.println("\n=== SISTEMA BANCÁRIO ===");
+            System.out.println("1 - Cadastrar Conta");
+            System.out.println("2 - Buscar Conta");
+            System.out.println("3 - Remover Conta");
+            System.out.println("4 - Sair");
+            System.out.print("Opção: ");
+
+            int opcao;
+            try {
+                opcao = sc.nextInt();
+                sc.nextLine(); // Limpeza de buffer
+            } catch (Exception e) {
+                System.out.println("Erro: Entrada inválida. Digite um número de opção válido.");
+                sc.nextLine(); // Limpa o valor inválido
+                continue;
             }
-        }catch(InputMismatchException e){
-            System.out.println("Erro: você deve digitar um número");
-        }catch(IndexOutOfBoundsException e){
-        System.err.println("Erro: Índice inválido: ");
-        }catch(Exception e ){
-            System.err.println("Erro inesperado: "+e.getMessage());
+
+            switch (opcao) {
+                case 1 -> {
+                    try {
+                        System.out.print("Número da conta: ");
+                        String numero = sc.nextLine();
+
+                        System.out.print("Nome do titular: ");
+                        String titular = sc.nextLine();
+
+                        System.out.print("Saldo inicial: R$ ");
+                        double saldo = sc.nextDouble();
+                        sc.nextLine();
+
+                        Banco novaConta = new Banco(numero, titular, saldo);
+                        cadastro.cadastrar(novaConta);
+                        System.out.println("Conta cadastrada com sucesso!");
+
+                    } catch (ExcecaoDadoInvalido | ExcecaoRepositorio | ExcecaoElementoJaExistente e) {
+                        System.out.println("Erro ao cadastrar: " + e.getMessage());
+                    } catch (Exception e) {
+                        System.out.println("Erro inesperado. Verifique os dados digitados.");
+                        sc.nextLine();
+                    }
+                }
+
+                case 2 -> {
+                    try {
+                        System.out.print("Informe o número da conta para busca: ");
+                        String numeroBusca = sc.nextLine();
+
+                        Banco contaEncontrada = cadastro.buscar(numeroBusca);
+                        System.out.println("\n--- CONTA ENCONTRADA ---");
+                        contaEncontrada.mostrarDados();
+
+                    } catch (ExcecaoElementoInexistente e) {
+                        System.out.println("Erro de Busca: " + e.getMessage());
+                    }
+                }
+
+                case 3 -> {
+                    try {
+                        System.out.print("Informe o número da conta para remoção: ");
+                        String numeroRemover = sc.nextLine();
+
+                        cadastro.remover(numeroRemover);
+                        System.out.println("Operação realizada com sucesso! Conta removida.");
+
+                    } catch (ExcecaoElementoInexistente e) {
+                        System.out.println("Erro ao Remover: " + e.getMessage());
+                    }
+                }
+
+                case 4 -> {
+                    System.out.println("Encerrando o sistema...");
+                    sc.close();
+                    return;
+                }
+
+                default -> System.out.println("Opção inválida! Escolha entre 1 e 4.");
+            }
         }
     }
 }
-
