@@ -1,0 +1,2 @@
+Marca: A1 | Modelo: A2 | Ano: A3
+Marca: C1 | Modelo: C2 | Ano: C3
