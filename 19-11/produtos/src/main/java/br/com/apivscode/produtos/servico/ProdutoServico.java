@@ -1,5 +1,7 @@
 package br.com.apivscode.produtos.servico;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -29,5 +31,12 @@ public class ProdutoServico {
         if (produto.getMarca()==null||produto.getMarca().isBlank()){
             return ResponseEntity.badRequest().body(criarResposta("O nome da marca e obrigatório"))
         }
+
+        ProdutoModelo produtoSalvo = repositorio.save(produto);
+
+        if ("cadastrar".equals(acao)){
+            return ResponseEntity.status(HttpStatus.CREATED).body(produtoSalvo);
+        }
+        return ResponseEntity.ok(produtoSalvo);
     }
 }
